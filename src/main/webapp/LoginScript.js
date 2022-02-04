@@ -1,6 +1,4 @@
-let emp = {
-    empId: 0
-}
+
 async function login() {
     let loginUrl = 'http://localhost:8080/demo_war_exploded/login';
 
@@ -13,16 +11,18 @@ async function login() {
         password: password
     }
 
+    //Marshaling to JSON
     let loginJson = JSON.stringify(loginObj)
 
     let xhr = new XMLHttpRequest();
 
-    xhr.onreadyStateChange = receiveData;
+    xhr.onreadyStateChange = receiveData();
 
     xhr.open("GET", loginUrl, true);
 
     xhr.setRequestHeader('Content-Type', 'application/json');
 
+    //Calls the endpoint/servlet
     xhr.send(loginJson);
 
 
@@ -31,7 +31,6 @@ async function login() {
             let r = xhr.responseText;
 
             rJson = JSON.parse(r);
-            emp.empId = rJson.employeeRole;
             localStorage.setItem("employeeId", rJson.employeeId);
             localStorage.setItem("firstName", rJson.firstName);
             localStorage.setItem("email", rJson.email);

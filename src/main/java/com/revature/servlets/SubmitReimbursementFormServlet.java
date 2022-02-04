@@ -36,6 +36,7 @@ public class SubmitReimbursementFormServlet extends HttpServlet {
 
         try {
             service.submitReimbursementForm(reimbursementForm);
+            response.sendRedirect("ReimbursementReceived.html");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body style="background-color: lightcyan;">
 <!--<h1>Hello, my name is <span id="name"></span></h1>-->
 <!--<script>-->
 <!--    let name = localStorage.getItem("firstName");-->
 <!--    document.getElementById("name").innerHTML = name;-->
 <!--</script>-->
-<h2>Employee Reimbursement Request Form </h2>
-<h3>Instructions (Please Read)</h3>
-<div>
+<div style="text-align: center;">
+    <h2>Employee Reimbursement Request Form </h2>
+</div>
+
+<div style="text-align: left;">
+    <h3>Instructions (Please Read)</h3>
     <p>We appreciate our customers seeking further education to advance their careers. <br>
         In an attempt to encourage our employees to further their education, we reimburse a certain <br>
         percantage of the cost associated with taking university courses, seminars, certification preparation classes, <br>
@@ -39,7 +42,7 @@
 <br>
 
 </div>
-<form action="SubmitReimbursementFormServlet" target="_self" method="POST">
+<form action="SubmitReimbursementFormServlet" method="POST">
     Employee Id
     <input type="number" name="employeeId" />
     <br>
@@ -161,11 +164,11 @@
     <textarea rows="5" cols="50" name="Description"
               id="Description"></textarea>
 
-
+    <br>
     <label for="fileselect">Upload:</label>
     <input type="file" />
     <br>
-
+    <br>
     <input type ="submit" value ="Submit"  onclick="submitReimForm()"/>
 
 </form>
